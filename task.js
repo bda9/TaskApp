@@ -1,11 +1,15 @@
-var task = {
-  title: "My task",
-  description: "My Description"
+var Task = function(name){
+    this.name = name;
+    this.completed = false;
 };
 
-
-task.toString = function() {
-  return this.title;
+Task.prototype.complete = function() {
+    console.log('completing task: ' + this.name);
+    this.completed = true;
 };
 
-console.log(task.toString());
+Task.prototype.save = function() {
+    console.log('saving task: ' + this.name);
+};
+
+module.exports = Task;
